@@ -12,14 +12,24 @@
 }
 
 .post-full-image img {
-    height: 500px !important;
+    height: 300px !important;
 }
 
+@media (max-width: 800px) {
+    .post-full-image img {
+        display: none !important;
+    }
+}
 
 .post-template .post-content > p:first-child {
     font-size: unset !important;
     line-height: unset !important;
 }
+
+.post-full-header {
+    padding: 3vw 3vw 3vw !important;
+}
+
 .post-full-title{
 	font-size: 3rem !important;
 }
