@@ -1,0 +1,74 @@
+.floating-header {
+    height: 1px !important;
+}
+
+.post-full-image {
+    margin: unset !important;
+}
+
+.post-full-content:before,
+.post-full-content:after {
+    display: none !important;
+}
+
+.post-full-image img {
+    height: 500px !important;
+}
+
+
+.post-template .post-content > p:first-child {
+    font-size: unset !important;
+    line-height: unset !important;
+}
+.post-full-title{
+	font-size: 3rem !important;
+}
+.post-full-content{
+	font-size: 2.0rem !important;
+}
+
+.post-full-content h2 {
+    font-size: 2.5rem !important;
+}
+
+.post-full-content h3 {
+    font-size: 2.2rem !important;
+}
+
+
+
+/* ==========================================================================
+   sspai.com old styles
+   ========================================================================== */
+
+   .row{
+	position:relative;
+	width:96%;
+	padding:3%;
+	margin:25px 0 0;
+	clear:both;
+	display:table;
+	background:#fff;
+	border-radius:1px;
+	}
+
+.row .grid4,
+.row .grid6{
+	text-align:center;
+	float:left;
+	margin:1%;
+	}
+
+.row .grid4 img,
+.row .grid6 img{
+	max-width:100%;
+	margin:0;
+	height:auto;
+	}
+.row .grid6{
+	width:47%;
+	}
+.row .grid4{
+	width:30.6%;
+	font-size:.85em;
+	}
