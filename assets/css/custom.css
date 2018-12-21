@@ -1,14 +1,15 @@
+/* 自定义样式 */
+
+/* 顶部浮动条 */
+
 .floating-header {
     height: 1px !important;
 }
 
+/* 文章题图 */
+
 .post-full-image {
     margin: unset !important;
-}
-
-.post-full-content:before,
-.post-full-content:after {
-    display: none !important;
 }
 
 .post-full-image img {
@@ -16,12 +17,19 @@
 }
 
 @media (max-width: 800px) {
-    .post-full-image img {
+    .post-full-image {
         display: none !important;
     }
 }
 
-.post-template .post-content > p:first-child {
+/* 文章字体和段落样式 */
+
+.post-full-content:before,
+.post-full-content:after {
+    display: none !important;
+}
+
+.post-template .post-content>p:first-child {
     font-size: unset !important;
     line-height: unset !important;
 }
@@ -30,11 +38,12 @@
     padding: 3vw 3vw 3vw !important;
 }
 
-.post-full-title{
-	font-size: 3rem !important;
+.post-full-title {
+    font-size: 3rem !important;
 }
-.post-full-content{
-	font-size: 2.0rem !important;
+
+.post-full-content {
+    font-size: 2.0rem !important;
 }
 
 .post-full-content h2 {
@@ -45,40 +54,38 @@
     font-size: 2.2rem !important;
 }
 
+/* sspai.com 图片排版旧样式 */
 
-
-/* ==========================================================================
-   sspai.com old styles
-   ========================================================================== */
-
-   .row{
-	position:relative;
-	width:96%;
-	padding:3%;
-	margin:25px 0 0;
-	clear:both;
-	display:table;
-	background:#fff;
-	border-radius:1px;
-	}
+.row {
+    position: relative;
+    width: 96%;
+    padding: 3%;
+    margin: 25px 0 0;
+    clear: both;
+    display: table;
+    background: #fff;
+    border-radius: 1px;
+}
 
 .row .grid4,
-.row .grid6{
-	text-align:center;
-	float:left;
-	margin:1%;
-	}
+.row .grid6 {
+    text-align: center;
+    float: left;
+    margin: 1%;
+}
 
 .row .grid4 img,
-.row .grid6 img{
-	max-width:100%;
-	margin:0;
-	height:auto;
-	}
-.row .grid6{
-	width:47%;
-	}
-.row .grid4{
-	width:30.6%;
-	font-size:.85em;
-	}
+.row .grid6 img {
+    max-width: 100%;
+    margin: 0;
+    height: auto;
+}
+
+.row .grid6 {
+    width: 47%;
+}
+
+.row .grid4 {
+    width: 30.6%;
+    font-size: .85em;
+}
