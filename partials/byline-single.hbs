@@ -12,12 +12,13 @@
         {{#if bio}}
             <p>{{bio}}</p>
         {{else}}
-            <p>阅读该作者 <a href="{{url}}">更多文章</a></p>
+            <p><time class="post-card-tags" datetime="{{date format="YYYY-MM-DD"}}">发表日期：{{date format="YYYY-MM-DD"}}</time></p>
         {{/if}}
     </section>
 </section>
 <div class="post-full-footer-right">
-    <a class="author-card-button" href="{{url}}">阅读更多</a>
+    {{!-- <a class="author-card-button" href="{{url}}">阅读更多</a> --}}
+    <div class="author-card-button fb-like" data-href="{{url}}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
 </div>
 
 {{/primary_author}}

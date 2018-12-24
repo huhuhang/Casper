@@ -54,6 +54,11 @@
     font-size: 2.2rem !important;
 }
 
+.author-card-button {
+    background: #4267b2;
+    border: none !important;
+}
+
 /* sspai.com 图片排版旧样式 */
 
 .row {
