@@ -61,6 +61,11 @@ into the {body} of the default.hbs template --}} <header
                     {{else}}
                     {{> "byline-single"}}
                     {{/has}}
+                    {{!-- 赞按钮 --}}
+                    <div class="post-full-footer-right">
+                        <div class="author-card-button fb-like" data-href="{{url}}" data-layout="button_count"
+                            data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+                    </div>
 
                 </footer>
 
@@ -86,7 +91,8 @@ into the {body} of the default.hbs template --}} <header
                     {{else}} {{#if @blog.cover_image}} style="background-image: url({{img_url @blog.cover_image size="m"}})"
                     {{/if}} {{/if}}>
                     <header class="read-next-card-header">
-                        {{!-- <small class="read-next-card-header-sitetitle">&mdash; {{@blog.title}} &mdash;</small> --}}
+                        {{!-- <small class="read-next-card-header-sitetitle">&mdash; {{@blog.title}} &mdash;</small>
+                        --}}
                         {{#../primary_tag}}
                         <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
                         {{/../primary_tag}}
@@ -145,13 +151,13 @@ into the {body} of the default.hbs template --}} <header
         }(document, 'script', 'facebook-jssdk'));</script>
 
     <script>
-    <script>
+        <script>
 
-        // NOTE: Scroll performance is poor in Safari
-        // - this appears to be due to the events firing much more slowly in Safari.
-        //   Dropping the scroll event and using only a raf loop results in smoother
-        //   scrolling but continuous processing even when not scrolling
-        $(document).ready(function () {
+            // NOTE: Scroll performance is poor in Safari
+            // - this appears to be due to the events firing much more slowly in Safari.
+            //   Dropping the scroll event and using only a raf loop results in smoother
+            //   scrolling but continuous processing even when not scrolling
+            $(document).ready(function () {
             // Start fitVids
             var $postContent = $(".post-full-content");
             $postContent.fitVids();
@@ -168,41 +174,41 @@ into the {body} of the default.hbs template --}} <header
 
             function onScroll() {
                 lastScrollY = window.scrollY;
-                requestTick();
-            }
+            requestTick();
+        }
 
             function onResize() {
                 lastWindowHeight = window.innerHeight;
-                lastDocumentHeight = $(document).height();
-                requestTick();
-            }
+            lastDocumentHeight = $(document).height();
+            requestTick();
+        }
 
             function requestTick() {
                 if (!ticking) {
-                    requestAnimationFrame(update);
-                }
-                ticking = true;
+                requestAnimationFrame(update);
             }
+            ticking = true;
+        }
 
             function update() {
                 var trigger = title.getBoundingClientRect().top + window.scrollY;
-                var triggerOffset = title.offsetHeight + 35;
-                var progressMax = lastDocumentHeight - lastWindowHeight;
+            var triggerOffset = title.offsetHeight + 35;
+            var progressMax = lastDocumentHeight - lastWindowHeight;
 
-                // show/hide floating header
+            // show/hide floating header
                 if (lastScrollY >= trigger + triggerOffset) {
-                    header.classList.add('floating-active');
-                } else {
-                    header.classList.remove('floating-active');
-                }
-
-                progressBar.setAttribute('max', progressMax);
-                progressBar.setAttribute('value', lastScrollY);
-
-                ticking = false;
+                header.classList.add('floating-active');
+            } else {
+                header.classList.remove('floating-active');
             }
 
-            window.addEventListener('scroll', onScroll, { passive: true });
+            progressBar.setAttribute('max', progressMax);
+            progressBar.setAttribute('value', lastScrollY);
+
+            ticking = false;
+        }
+
+            window.addEventListener('scroll', onScroll, {passive: true });
             window.addEventListener('resize', onResize, false);
 
             update();
