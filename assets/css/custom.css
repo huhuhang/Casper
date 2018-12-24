@@ -59,6 +59,12 @@
     border: none !important;
 }
 
+.social-link-custom {
+    padding-top: 5px;
+    width: 24px;
+    display: block;
+}
+
 /* sspai.com 图片排版旧样式 */
 
 .row {
