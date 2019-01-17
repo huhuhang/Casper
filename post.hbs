@@ -139,7 +139,18 @@ into the {body} of the default.hbs template --}} <header
     {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in
     default.hbs --}}
     {{#contentFor "scripts"}}
-
+    {{!-- MathJax 公式 --}}
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [["$", "$"]],
+                processEscapes: true
+            }
+        });
+    </script>
+    {{!-- 代码高亮 --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     {{!-- Facebook 赞按钮 --}}
     <div id="fb-root"></div>
     <script>(function (d, s, id) {
