@@ -77,6 +77,18 @@
     background: unset !important;
 }
 
+.site-footer-content {
+    color: #3c484e !important;
+}
+
+.site-footer-content a {
+    color: #3c484e !important;
+}
+
+.site-footer-content a:hover {
+    color: #3c484ee6 !important;
+}
+
 /* sspai.com 图片排版旧样式 */
 
 .row {
