@@ -34,18 +34,7 @@
     <div id="subscribe" class="subscribe-overlay">
         <a class="subscribe-overlay-close" href="#"></a>
         <div class="subscribe-overlay-content">
-            {{#if @blog.logo}}
-                <img class="subscribe-overlay-logo" src="{{@blog.logo}}" alt="{{@blog.title}}" />
-            {{/if}}
-            <div>
-            站点由 <a href="http://weibo.com/338363939/" target="_blank">@huhuhang</a> 维护，文章均为原创。全站文章均谢绝转载。<br>
-            部分应用测评和摄影技巧的文章均首次发表于 <a href="https://sspai.com/" target="_blank">少数派 sspai.com</a>。<br>
-            如果你对文章有任何疑问，可以通过<a href="base64: aHVodWhhbmdAZ21haWwuY29t" target="_blank">邮件</a>等方式友好地和我讨论。<br>
-            博客主题可到 <a href="https://github.com/huhuhang/Casper" target="_blank">GitHub 下载</a> 使用。<br><br>
-            </div>
-            <div>
-            <img style="width:150px; padding:10px;" src="/content/images/_image/caffe.png">
-            </div>
+            {{> "about-me"}}
         </div>
     </div>
     {{/if}}
