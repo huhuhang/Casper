@@ -39,24 +39,35 @@ into the {body} of the default.hbs template --}} <header
                         sizes="(max-width: 800px) 400px,
                             (max-width: 1170px) 700px,
                             1400px"
-                        src="{{img_url feature_image size="xl"}}" alt="{{title}}" />
-                </figure>
-                {{/if}}
+                    src="{{img_url feature_image size="xl"}}"
+                    alt="{{title}}"
+                />
+            </figure>
+            {{/if}}
 
-                <section class="post-full-content">
-                    <div class="post-content">
-                        {{content}}
-                    </div>
-                </section>
+            <section class="post-full-content">
+                <div class="post-content">
+                    {{content}}
+                </div>
+            </section>
 
-                <footer class="post-full-footer">
+            {{!-- Email subscribe form at the bottom of the page --}}
+            {{!-- {{#if @labs.subscribers}}
+            <section class="subscribe-form">
+                <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
+                <p>Get the latest posts delivered right to your inbox</p>
+                {{subscribe_form placeholder="youremail@example.com"}}
+            </section>
+            {{/if}} --}}
 
-                    {{!-- There are two options for how we display the byline/author-info.
-                    If the post has more than one author, we load a specific template
-                    from includes/byline-multiple.hbs, otherwise, we just use the
-                    default byline. --}}
+            <footer class="post-full-footer">
 
-                    {{#has author="count:>1"}}
+                {{!-- There are two options for how we display the byline/author-info.
+                If the post has more than one author, we load a specific template
+                from includes/byline-multiple.hbs, otherwise, we just use the
+                default byline. --}}
+
+                {{#has author="count:>1"}}
                     {{> "byline-multiple"}}
                     {{else}}
                     {{> "byline-single"}}
@@ -87,12 +98,16 @@ into the {body} of the default.hbs template --}} <header
                 {{#if primary_tag}}
                 {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
                 {{#if related_posts}}
-                <article class="read-next-card" {{#if ../primary_tag.feature_image}} style="background-image: url({{img_url ../primary_tag.feature_image size="m"}})"
-                    {{else}} {{#if @site.cover_image}} style="background-image: url({{img_url @site.cover_image size="m"}})"
-                    {{/if}} {{/if}}>
+                <article class="read-next-card"
+                    {{#if ../primary_tag.feature_image}}
+                        style="background-image: url({{img_url ../primary_tag.feature_image size="m"}})"
+                    {{else}}
+                        {{#if @site.cover_image}}
+                            style="background-image: url({{img_url @site.cover_image size="m"}})"{{/if}}
+                    {{/if}}
+                >
                     <header class="read-next-card-header">
-                        {{!-- <small class="read-next-card-header-sitetitle">&mdash; {{@site.title}} &mdash;</small>
-                        --}}
+                        <small class="read-next-card-header-sitetitle">&mdash; {{@site.title}} &mdash;</small>
                         {{#../primary_tag}}
                         <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
                         {{/../primary_tag}}
