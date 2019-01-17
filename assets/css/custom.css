@@ -73,6 +73,10 @@
     max-width: 100% !important;
 }
 
+.site-footer {
+    background: unset !important;
+}
+
 /* sspai.com 图片排版旧样式 */
 
 .row {
